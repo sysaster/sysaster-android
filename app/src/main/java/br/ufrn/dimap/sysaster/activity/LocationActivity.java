@@ -1,4 +1,4 @@
-package br.ufrn.dimap.sysaster;
+package br.ufrn.dimap.sysaster.activity;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
@@ -14,6 +14,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import br.ufrn.dimap.sysaster.R;
 
 public class LocationActivity extends FragmentActivity implements OnMapReadyCallback {
 

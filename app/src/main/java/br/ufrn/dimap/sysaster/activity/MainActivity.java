@@ -1,4 +1,4 @@
-package br.ufrn.dimap.sysaster;
+package br.ufrn.dimap.sysaster.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import br.ufrn.dimap.sysaster.R;
 
 public class MainActivity extends AppCompatActivity {
 

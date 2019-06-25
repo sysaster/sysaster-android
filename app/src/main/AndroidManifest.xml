@@ -30,15 +30,15 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".LocationActivity"
+            android:name=".activity.LocationActivity"
             android:label="@string/title_activity_location">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.ufrn.dimap.sysaster.MenuActivity" />
+                android:value="br.ufrn.dimap.sysaster.activity.MenuActivity" />
         </activity>
-        <activity android:name=".MenuActivity" />
+        <activity android:name=".activity.MenuActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

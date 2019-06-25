@@ -15,8 +15,7 @@
         app:cardElevation="4dp"
         app:cardPreventCornerOverlap="false"
         app:contentPadding="10dp"
-        app:cardBackgroundColor="@color/colorPrimaryDark"
-        android:onClick="goToMap">
+        app:cardBackgroundColor="@color/colorPrimaryDark">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -38,6 +37,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_datetime"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -45,6 +45,7 @@
                     android:text="Date: 22/05/2019 - 18:34"/>
 
                 <TextView
+                    android:id="@+id/tv_latitude"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -52,6 +53,7 @@
                     android:text="Latitude: -45454155"/>
 
                 <TextView
+                    android:id="@+id/tv_longitude"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
