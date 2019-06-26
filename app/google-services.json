@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "655427309219",
+    "firebase_url": "https://sysaster-84ef9.firebaseio.com",
+    "project_id": "sysaster-84ef9",
+    "storage_bucket": "sysaster-84ef9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655427309219:android:884964829b091dc9",
+        "android_client_info": {
+          "package_name": "br.ufrn.dimap.sysaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655427309219-l35mo6j41q79p842vjd8h89a9i1665hg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.ufrn.dimap.sysaster",
+            "certificate_hash": "ffd5f7faf1ed359088537e8646b8a2023e6ac092"
+          }
+        },
+        {
+          "client_id": "655427309219-9if5imimmeist9jglme7ppr0avida21n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwRZmWOp7JOItmxZs40X1po_LFlNDMYzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655427309219-9if5imimmeist9jglme7ppr0avida21n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

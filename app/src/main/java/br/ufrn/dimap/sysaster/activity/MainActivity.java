@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
-                Intent i = new Intent(getApplicationContext(), MenuActivity.class);
+                Intent i = new Intent(getApplicationContext(), TopicRegisterActivity.class);
                 startActivity(i);
                 finish();
             }
