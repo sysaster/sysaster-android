@@ -1,11 +1,19 @@
 package br.ufrn.dimap.sysaster.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -42,8 +50,39 @@ public class MenuActivity extends AppCompatActivity {
         mDisasters.setAdapter(mAdapter);
     }
 
-    public void teste(View view) {
-        disastersList.add(new Location((long) 1, "", 4545465.4545, 4543545.4455, new Date()));
-        mAdapter.notifyDataSetChanged();
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LocalBroadcastManager.getInstance(this).registerReceiver((mMessageReceiver), new IntentFilter("DisasterNotification"));
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
+    }
+
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            String encodedImage = "";
+            if(intent.getExtras().getString("image") != null && !intent.getExtras().getString("image").equals("") ){
+                encodedImage = intent.getExtras().getString("image");
+            }
+
+            Double lat = Double.valueOf(intent.getExtras().getString("lat"));
+            Double lon = Double.valueOf(intent.getExtras().getString("lon"));
+
+            String topic = intent.getExtras().getString("topic");
+
+            Log.i("lat,lon: ", lat + " " + lon);
+            Log.i("Image-after", encodedImage);
+
+            //encodedImage = encodedImage.substring(2, encodedImage.length() - 1);
+
+            disastersList.add(new Location(topic, encodedImage, lat, lon, new Date()));
+            mAdapter.notifyDataSetChanged();
+        }
+    };
 }

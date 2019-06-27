@@ -3,13 +3,13 @@ package br.ufrn.dimap.sysaster.model;
 import java.util.Date;
 
 public class Location {
-    private Long id;
+    private String id;
     private String urlImage;
     private Double latitude;
     private Double longitude;
     private Date date;
 
-    public Location(Long id, String urlImage, Double latitude, Double longitude, Date date) {
+    public Location(String id, String urlImage, Double latitude, Double longitude, Date date) {
         this.id = id;
         this.urlImage = urlImage;
         this.latitude = latitude;
@@ -17,11 +17,11 @@ public class Location {
         this.setDate(date);
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

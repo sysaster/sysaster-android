@@ -3,6 +3,7 @@ package br.ufrn.dimap.sysaster.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,13 +28,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import br.ufrn.dimap.sysaster.R;
+import br.ufrn.dimap.sysaster.util.Util;
 
 public class TopicRegisterActivity extends AppCompatActivity {
 
     private Button mSubscribe;
     private EditText mCode;
-    private static final String URL ="http://192.168.0.115:4000/topics/subscribe";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +54,7 @@ public class TopicRegisterActivity extends AppCompatActivity {
 
     private void makeRequest(String code){
 
-                final HashMap<String, String> data = new HashMap<>();
-        //data.put("Content-Type", "application/json; charset=utf-8");
+        final HashMap<String, String> data = new HashMap<>();
 
         data.put("topic",code);
         Log.i("TOPIC", code);
@@ -74,11 +73,13 @@ public class TopicRegisterActivity extends AppCompatActivity {
                     Log.i("TOKEN", data.get("token"));
 
                     RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-                    JsonObjectRequest jsonobj = new JsonObjectRequest(Request.Method.POST, URL, new JSONObject(data),
+                    JsonObjectRequest jsonobj = new JsonObjectRequest(Request.Method.POST, Util.SUBSCRIBE_URL, new JSONObject(data),
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {
                                     Toast.makeText(TopicRegisterActivity.this, "Subscribed with success!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                                    startActivity(intent);
                                 }
                             },
                             new Response.ErrorListener() {
